@@ -430,7 +430,7 @@ local plr = game.Players.LocalPlayer --the local player (obviously)
 				end)
 			end
 			if cmd == "gravity" then
-			       loadstring(game:HttpGet("https://pastebin.com/raw/6QTyua2e", true))()
+			       
                        	
 		
                 end
