@@ -6,47 +6,7 @@ local plr = game.Players.LocalPlayer --the local player (obviously)
 		Text = "Disfruta mientras";
 	})
   end
-	  local prefix  = "."
-	local LPlayer = game.Players.LocalPlayer
-	LPlayer.Chatted:Connect(function(msg)
-		msg = msg:lower()
-		if string.sub(msg,1,3) == "/e " then
-			msg = string.sub(msg,4)
-		end
-		if string.sub(msg,1,1) == prefix then
-			local cmd
-			local space = string.find(msg," ")
-			if space then
-				cmd = string.sub(msg,2,space-1)
-			else
-				cmd = string.sub(msg,2)
-			end
-	
-			if cmd == "animations" then
-                          local player = game.Players.LocalPlayer
-
-local humanoid = player.Character.Humanoid
-local mouse = player:GetMouse()
-
-
-local anim = Instance.new("Animation")
-anim.AnimationId = "http://www.roblox.com/asset/?id=3152378852"
-
-mouse.KeyDown:connect(function(key)
-  if key == "z" then
-   local playAnim = humanoid:LoadAnimation(anim)
-   playAnim:Play()
-  else 
-    local AnimationTracks = humanoid:GetPlayingAnimationTracks()
- 
--- Stop all playing animations
-for i, track in pairs (AnimationTracks) do
-	track:Stop()
-end
-    
-    end
-end)
-			end
+	  
 	if plr:IsInGroup(7684108) then --you can change "IsFriendsWith" to "IsInGroup" and put the group id.
 	  local prefix  = "."
 	local LPlayer = game.Players.LocalPlayer
