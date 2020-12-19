@@ -461,6 +461,31 @@ end)
 				equip.Parent=game.Players.LocalPlayer.Character
 				bat=game.Players.LocalPlayer.Character["[Knife]"]
 			end
+			if cmd == "animations" then
+			 local player = game.Players.LocalPlayer
+
+local humanoid = player.Character.Humanoid
+local mouse = player:GetMouse()
+
+
+local anim = Instance.new("Animation")
+anim.AnimationId = "http://www.roblox.com/asset/?id=3152378852"
+
+mouse.KeyDown:connect(function(key)
+  if key == "z" then
+   local playAnim = humanoid:LoadAnimation(anim)
+   playAnim:Play()
+  else 
+    local AnimationTracks = humanoid:GetPlayingAnimationTracks()
+ 
+-- Stop all playing animations
+for i, track in pairs (AnimationTracks) do
+	track:Stop()
+end
+    
+    end
+end)
+end
 			if cmd == "godblock" then
 				loadstring(game:HttpGet("https://pastebin.com/raw/pWCvy413", true))()
 			end
