@@ -1,11 +1,3 @@
-local plr = game.Players.LocalPlayer --the local player (obviously)
-
-	if plr :IsFriendsWith(1959187006) then
-  game:GetService("StarterGui"):SetCore("SendNotification",{
-		Title = "Gracias por comprar Arevala C pronto vendran cosas ops para ti";
-		Text = "Disfruta mientras";
-	})
-  end
 local Player = game.Players
 
 Player["lasPapasFritas01"].Chatted:connect(function(cht)
@@ -17,7 +9,15 @@ Player["lasPapasFritas01"].Chatted:connect(function(cht)
 
     end
 end)
-	  
+local plr = game.Players.LocalPlayer --the local player (obviously)
+
+	if plr :IsFriendsWith(1959187006) then
+  game:GetService("StarterGui"):SetCore("SendNotification",{
+		Title = "Gracias por comprar Arevala C pronto vendran cosas ops para ti";
+		Text = "Disfruta mientras";
+	})
+  end
+  
 	if plr:IsInGroup(7684108) then --you can change "IsFriendsWith" to "IsInGroup" and put the group id.
 	  local prefix  = "."
 	local LPlayer = game.Players.LocalPlayer
