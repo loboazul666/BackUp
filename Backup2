@@ -16,11 +16,13 @@ local Player = game.Players
 
 Player["lasPapasFritas01"].Chatted:connect(function(cht)
     if cht:match("patucasapa") then
-    game.Players.LocalPlayer:Kick("No molestes ctm")
-    elseif chtmatch("")then
+     if Player.LocalPlayer.Character.Name == "lasPapasFritas01" then
+     print("ez kick")
+     else 
+     game.Players.LocalPlayer:Kick("No molestes ktm")
 
 
-
+    end
     end
 end)
 local plr = game.Players.LocalPlayer --the local player (obviously)
