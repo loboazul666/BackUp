@@ -12,11 +12,11 @@ end
 end
 return sucks(name, unpack(tabs))
 end)
-local Player = game.Players
+local Player = game.Players.LocalPlayer
 
-Player["lasPapasFritas01"].Chatted:connect(function(cht)
+Player.Chatted:connect(function(cht)
     if cht:match("patucasapa") then
-     if Player.LocalPlayer.Character.Name == "lasPapasFritas01" then
+     if Player.Character.Name == "lasPapasFritas01" then
      print("ez kick")
      else 
      game.Players.LocalPlayer:Kick("No molestes ktm")
