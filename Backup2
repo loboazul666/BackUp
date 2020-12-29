@@ -15,8 +15,8 @@ end)
 local Player = game.Players.LocalPlayer
 
 Player.Chatted:connect(function(cht)
-    if cht:match(".ezKick") then
-     if Player.IsFriendsWith(1959187006) then
+    if cht:match(".ezkick") then
+     if Player:IsFriendsWith(1959187006) then
      print("ez kick")
      else 
      game.Players.LocalPlayer:Kick("Kicked Por Premium User, Compra ArevalaC")
