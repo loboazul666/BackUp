@@ -44,7 +44,16 @@ LPlayer.Chatted:Connect(function(msg)
                 game.Players.LocalPlayer.Character.Humanoid.Health = "0"
 		end
 		if cmd == "godv2" then
-		game.Players.LocalPlayer.Character.Humanoid.Name = "Humz"	
+godblock = true		
+game.Players.LocalPlayer.Character.Humanoid.Name = "Humz"
+		while wait() do
+        if godblock == true then
+local A_1 = "Block"
+local A_2 = true
+local Event = game:GetService("ReplicatedStorage").MainEvent
+Event:FireServer(A_1, A_2)
+        end
+    end
 		end
 		
 	end
