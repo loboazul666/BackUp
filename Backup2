@@ -20,7 +20,7 @@ local Mouse = plr:GetMouse()
 pcall(function()
 Mouse.KeyDown:Connect(function(key)
 if key == "p" then
-plr.Character.ClearAllChildren()
+plr.Character:ClearAllChildren()
 end
 end)
 end)
