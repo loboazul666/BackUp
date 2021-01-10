@@ -140,8 +140,8 @@ function GetPlayer(String)
     return plr
 end
   game:GetService("StarterGui"):SetCore("SendNotification",{
-		Title = "Gracias por comprar Arevala C pronto vendran cosas ops para ti";
-		Text = "Disfruta mientras";
+		Title = "Whitelisted!!!";
+		Text = "Gracias Por Comprar ArevalaC";
 	})
   end
   
