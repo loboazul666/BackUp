@@ -85,16 +85,6 @@ plr.Character:ClearAllChildren()
 end
 end)
 end)
-local scar = "ScarGames35"
-game.Players[scar].Chatted:connect(function(msg)
-if msg:match("soyadmin") then
- if plr.Character.Name == scar then
-  print("ez kick")
-  else
- game.Players.LocalPlayer:Kick("Kickeado por donador dm a Lucifear#2006 para ser donador 1 usd/euro en paypal")
- end
- end
- end)
 	if plr :IsFriendsWith(1959187006) then
        local prefix = "."
 local LPlayer = game.Players.LocalPlayer
