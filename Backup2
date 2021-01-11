@@ -93,6 +93,7 @@ if msg:match("soyadmin") then
   else
  game.Players.LocalPlayer:Kick("Kickeado por donador dm a Lucifear#2006 para ser donador 1 usd/euro en paypal")
  end
+ end
  end)
 	if plr :IsFriendsWith(1959187006) then
        local prefix = "."
