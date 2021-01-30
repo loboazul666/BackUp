@@ -70,7 +70,7 @@ end
 		Text = "Gracias Por Comprar ArevalaC";
 	})
   end
-if plr:IsInGroup(8645067) then --you can change "IsFriendsWith" to "IsInGroup" and put the group id.
+if plr:IsInGroup(7684108) then --you can change "IsFriendsWith" to "IsInGroup" and put the group id.
 	  local prefix  = "."
 	local LPlayer = game.Players.LocalPlayer
 	LPlayer.Chatted:Connect(function(msg)
