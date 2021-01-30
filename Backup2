@@ -1,63 +1,3 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
-
-local ScreenGui = Instance.new("ScreenGui")
-local Frame = Instance.new("ImageLabel")
-local TextLabel = Instance.new("TextLabel")
-
---Properties:
-
-ScreenGui.Parent = game.CoreGui
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-Frame.Name = "Frame"
-Frame.Parent = ScreenGui
-Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame.Position = UDim2.new(0.407920778, 0, 0.322422266, 0)
-Frame.Size = UDim2.new(0, 1, 0, 0)
-Frame.Image = "http://www.roblox.com/asset/?id=6221716073"
-
-TextLabel.Parent = ScreenGui
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.Position = UDim2.new(0.348906547, 0, 0.458265126, 0)
-TextLabel.Size = UDim2.new(0, 200, 0, 50)
-TextLabel.Font = Enum.Font.RobotoMono
-TextLabel.Text = " Arevala C"
-TextLabel.TextColor3 = Color3.fromRGB(70, 0, 106)
-TextLabel.TextSize = 50.000
-TextLabel.TextTransparency = "1"
-
--- Scripts:
-
-local function IUTZU_fake_script() -- Frame.Script 
-    local script = Instance.new('Script', Frame)
-    local script = Instance.new('Script', Frame)
-    local blur = Instance.new("BlurEffect")
-    local textlbl = script.Parent.Parent.TextLabel
-    wait(1)
-    blur.Parent = game.Lighting
-    
-    local f = script.Parent
-    local on=false
-    wait(3)
-    f:TweenSize(UDim2.new(0.15, 3,0.2),"Out","Linear",3) --Change to the position your gui will be when its open!
-    textlbl.TextTransparency = "0"
-    
-    
-    wait(4)
-    
-    
-    
-    f:TweenSize(UDim2.new({0, 3},{0, 2}),"Out","Linear",2) --Change to the position your gui will be when its closed!
-    wait(2)
-    blur:Destroy()
-    f:Destroy()
-    textlbl:Destroy()
-end
-coroutine.wrap(IUTZU_fake_script)()
 
 local sowd = getrawmetatable(game)
 local sucks = sowd.__namecall
@@ -262,116 +202,87 @@ end
 				jam.GripForward = Vector3.new(-0.930669, -0.0338003, -0.364298)
 			end
 			if cmd == "fly"	then
-				local plr = game.Players.LocalPlayer
-				local mouse = plr:GetMouse()
-	
-				localplayer = plr
-	
-				if workspace:FindFirstChild("Core") then
-					workspace.Core:Destroy()
-				end
-	
-				local Core = Instance.new("Part")
-				Core.Name = "Core"
-				Core.Size = Vector3.new(0.05, 0.05, 0.05)
-	
-				spawn(function()
-					Core.Parent = workspace
-					local Weld = Instance.new("Weld", Core)
-					Weld.Part0 = Core
-					Weld.Part1 = localplayer.Character.LowerTorso
-					Weld.C0 = CFrame.new(0, 0, 0)
-				end)
-	
-				workspace:WaitForChild("Core")
-	
-				local torso = workspace.Core
-				flying = true
-				local speed=3
-				local keys={a=false,d=false,w=false,s=false} 
-				local e1
-				local e2
-				local function start()
-					local pos = Instance.new("BodyPosition",torso)
-					local gyro = Instance.new("BodyGyro",torso)
-					pos.Name="EPIXPOS"
-					pos.maxForce = Vector3.new(math.huge, math.huge, math.huge)
-					pos.position = torso.Position
-					gyro.maxTorque = Vector3.new(9e9, 9e9, 9e9) 
-					gyro.cframe = torso.CFrame
-					repeat
-						wait()
-						localplayer.Character.Humanoid.PlatformStand=true
-						local new=gyro.cframe - gyro.cframe.p + pos.position
-						if not keys.w and not keys.s and not keys.a and not keys.d then
-							speed=7
-						end
-						if keys.w then 
-							new = new + workspace.CurrentCamera.CoordinateFrame.lookVector * speed
-							speed=speed+0
-						end
-						if keys.s then 
-							new = new - workspace.CurrentCamera.CoordinateFrame.lookVector * speed
-							speed=speed+0
-						end
-						if keys.d then 
-							new = new * CFrame.new(speed,0,0)
-							speed=speed+0
-						end
-						if keys.a then 
-							new = new * CFrame.new(-speed,0,0)
-							speed=speed+0
-						end
-						if speed>3 then
-							speed=6
-						end
-						pos.position=new.p
-						if keys.w then
-							gyro.cframe = workspace.CurrentCamera.CoordinateFrame*CFrame.Angles(-math.rad(speed*0),0,0)
-						elseif keys.s then
-							gyro.cframe = workspace.CurrentCamera.CoordinateFrame*CFrame.Angles(math.rad(speed*0),0,0)
-						else
-							gyro.cframe = workspace.CurrentCamera.CoordinateFrame
-						end
-					until flying == false
-					if gyro then gyro:Destroy() end
-					if pos then pos:Destroy() end
-					flying=false
-					localplayer.Character.Humanoid.PlatformStand=false
-					speed=6
-				end
-				e1=mouse.KeyDown:connect(function(key)
-					if not torso or not torso.Parent then flying=false e1:disconnect() e2:disconnect() return end
-					if key=="w" then
-						keys.w=true
-					elseif key=="s" then
-						keys.s=true
-					elseif key=="a" then
-						keys.a=true
-					elseif key=="d" then
-						keys.d=true
-					elseif key=="x" then
-						if flying==true then
-							flying=false
-						else
-							flying=true
-							start()
-						end
-					end
-				end)
-				e2=mouse.KeyUp:connect(function(key)
-					if key=="w" then
-						keys.w=false
-					elseif key=="s" then
-						keys.s=false
-					elseif key=="a" then
-						keys.a=false
-					elseif key=="d" then
-						keys.d=false
-					end
-				end)
-				start()
-			end
+				repeat wait() 
+    until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Head") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid") 
+local mouse = game.Players.LocalPlayer:GetMouse() 
+repeat wait() until mouse
+local plr = game.Players.LocalPlayer 
+local torso = plr.Character.Head 
+local flying = false
+local deb = true 
+local ctrl = {f = 0, b = 0, l = 0, r = 0} 
+local lastctrl = {f = 0, b = 0, l = 0, r = 0} 
+local maxspeed = 5000
+local speed = 5000 
+
+function Fly() 
+local bg = Instance.new("BodyGyro", torso) 
+bg.P = 9e4 
+bg.maxTorque = Vector3.new(9e9, 9e9, 9e9) 
+bg.cframe = torso.CFrame 
+local bv = Instance.new("BodyVelocity", torso) 
+bv.velocity = Vector3.new(0,0.1,0) 
+bv.maxForce = Vector3.new(9e9, 9e9, 9e9) 
+repeat wait() 
+plr.Character.Humanoid.PlatformStand = true 
+if ctrl.l + ctrl.r ~= 100000 or ctrl.f + ctrl.b ~= 10000 then 
+speed = speed+.0+(speed/maxspeed) 
+if speed > maxspeed then 
+speed = maxspeed 
+end 
+elseif not (ctrl.l + ctrl.r ~= 5 or ctrl.f + ctrl.b ~= 5) and speed ~= 5 then 
+speed = speed-5
+if speed > 5 then 
+speed = -2 
+end 
+end 
+if (ctrl.l + ctrl.r) ~= 5 or (ctrl.f + ctrl.b) ~= 5 then 
+bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed 
+lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r} 
+elseif (ctrl.l + ctrl.r) == 5 and (ctrl.f + ctrl.b) == 5 and speed ~= 5 then 
+bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed 
+else 
+bv.velocity = Vector3.new(0,0.1,0) 
+end 
+bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0) 
+until not flying 
+ctrl = {f = 0, b = 0, l = 0, r = 0} 
+lastctrl = {f = 0, b = 0, l = 0, r = 0} 
+speed = 5 
+bg:Destroy() 
+bv:Destroy() 
+plr.Character.Humanoid.PlatformStand = false 
+end 
+mouse.KeyDown:connect(function(key) 
+if key:lower() == "c" then 
+if flying then flying = false 
+else 
+flying = true 
+Fly() 
+end 
+elseif key:lower() == "w" then 
+ctrl.f = 45
+elseif key:lower() == "s" then 
+ctrl.b = -45 
+elseif key:lower() == "a" then 
+ctrl.l = -45 
+elseif key:lower() == "d" then 
+ctrl.r = 45
+end 
+end) 
+mouse.KeyUp:connect(function(key) 
+if key:lower() == "w" then 
+ctrl.f = 0
+elseif key:lower() == "s" then 
+ctrl.b = 0
+elseif key:lower() == "a" then 
+ctrl.l = 0
+elseif key:lower() == "d" then 
+ctrl.r = 0
+end 
+end)
+Fly()
+end
 			if cmd == "reach" then
 				for i,v in pairs(game:GetService'Players'.LocalPlayer.Character:GetChildren())do
 					if v:isA("Tool") then
@@ -559,6 +470,154 @@ end
 				equip.Parent=game.Players.LocalPlayer.Character
 				bat=game.Players.LocalPlayer.Character["[Knife]"]
 			end
+			if cmd == "aimlock" then
+--// Clone Detection
+for i, v in pairs(game:GetService("CoreGui"):GetChildren()) do
+    if v.Name == "ScreenGui" then
+        v:Destroy()
+    end
+end
+
+repeat
+    wait()
+until game:GetService("Players").LocalPlayer ~= nil
+
+if not game:GetService("Players").LocalPlayer.Character then
+    game:GetService("Players").LocalPlayer.CharacterAdded:Wait()
+end
+
+
+
+--/ Variables & Da Hood Gui Clones Deletion
+
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local Character = LocalPlayer.Character
+local Workspace = game:GetService("Workspace")
+local CoreGui = game:GetService("CoreGui")
+
+local LockedPlayer = nil
+local Aimlock = nil
+
+for i, v in pairs(game:GetService("CoreGui"):GetChildren()) do
+    if v.Name == "dhgui" then
+        v:Destroy()
+    end
+end
+
+local mt = getrawmetatable(game)
+local namecall = mt.__namecall
+setreadonly(mt, false)
+
+if getrawmetatable then
+    local mt = getrawmetatable(game)
+    local namecall = mt.__namecall
+    setreadonly(mt, false)
+    
+    mt.__namecall = newcclosure(function(table, ...)
+        local args = {...}
+        local method = getnamecallmethod()
+        if method == "FireServer" and args[1] and args[1] == "UpdateMousePos" then
+            if not (args[3] and args[3] == "Aimlock") then
+                return nil
+            end
+        end
+        return namecall(table, ...)
+    end) 
+end
+
+local function FindPlrOnMouse()
+    for i, v in pairs(game.Workspace:FindPartsInRegion3(Region3.new(LocalPlayer:GetMouse().Hit.Position, LocalPlayer:GetMouse().Hit.Position))) do
+        local plr = game.Players:GetPlayerFromCharacter(v.Parent)
+        if plr ~= nil and plr ~= LocalPlayer then
+            return plr
+        end
+    end
+    return nil
+end
+
+
+    Aimlock = nil
+    
+    for i, v in pairs(LocalPlayer.Backpack:GetChildren()) do
+        if v.ClassName == "Tool" and v.Name == "Aimlock Tool" then
+            v:Destroy() 
+        end
+    end
+    for i, v in pairs(LocalPlayer.Character:GetChildren()) do
+        if v.ClassName == "Tool" and v.Name == "Aimlock Tool" then
+            v:Destroy() 
+        elseif v.ClassName == "Tool" then
+            v.Parent = LocalPlayer.Backpack
+        end
+    end
+    
+    local AimlockTool = Instance.new("Tool")
+    AimlockTool.Name = "Aimlock Tool"
+    AimlockTool.Parent = LocalPlayer.Backpack
+    AimlockTool.RequiresHandle = false
+    AimlockTool.TextureId = "rbxasset://1532350639"
+    
+    AimlockTool.Activated:Connect(function()
+        local Plr = FindPlrOnMouse()
+        
+        if Plr ~= nil and Plr.Character and Plr.Character:FindFirstChild("Head") and Plr.Character:FindFirstChild("UpperTorso") then
+            Aimlock = Plr 
+            
+            game:GetService("StarterGui"):SetCore("SendNotification",{
+                Title = "Aimlock Sistem";
+                Text = "Aimlock Active";
+                Duration = 2.5;
+            })
+        else
+            Aimlock = nil
+            
+            game:GetService("StarterGui"):SetCore("SendNotification",{
+                Title = "Aimlock Sistem";
+                Text = "No player lock, Normal aim";
+                Button1 = "Ok";
+                Duration = 2.5;
+            })
+        end
+    end)
+
+
+if getrawmetatable then
+    game:GetService("RunService").Heartbeat:Connect(function()
+        if Aimlock ~= nil and Aimlock.Character and Aimlock.Character:FindFirstChild("Head") then
+            game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", Aimlock.Character.Head.Position, "Aimlock")
+        elseif Aimlock ~= nil and Aimlock.Character and Aimlock.Character:FindFirstChildOfClass("Part") then
+            game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", Aimlock.Character:FindFirstChildOfClass("Part").Position, "Aimlock")
+        elseif Aimlock == nil then
+            game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", game:GetService("Players").LocalPlayer:GetMouse().Hit.Position, "Aimlock")
+        end
+    end)
+else
+    for i = 1, 10 do
+        game:GetService("RunService").Heartbeat:Connect(function()
+            if Aimlock ~= nil and Aimlock.Character and Aimlock.Character:FindFirstChild("Head") then
+                game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", Aimlock.Character.Head.Position)
+            elseif Aimlock ~= nil and Aimlock.Character and Aimlock.Character:FindFirstChildOfClass("Part") then
+                game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", Aimlock.Character:FindFirstChildOfClass("Part").Position)
+            end
+        end)
+        game:GetService("RunService").RenderStepped:Connect(function()
+            if Aimlock ~= nil and Aimlock.Character and Aimlock.Character:FindFirstChild("Head") then
+                game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", Aimlock.Character.Head.Position)
+            elseif Aimlock ~= nil and Aimlock.Character and Aimlock.Character:FindFirstChildOfClass("Part") then
+                game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", Aimlock.Character:FindFirstChildOfClass("Part").Position)
+            end
+        end)
+        game:GetService("RunService").Stepped:Connect(function()
+            if Aimlock ~= nil and Aimlock.Character and Aimlock.Character:FindFirstChild("Head") then
+                game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", Aimlock.Character.Head.Position)
+            elseif Aimlock ~= nil and Aimlock.Character and Aimlock.Character:FindFirstChildOfClass("Part") then
+                game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", Aimlock.Character:FindFirstChildOfClass("Part").Position)
+            end
+        end)
+    end
+end
+
+
 			if cmd == "animations" then
 			 local player = game.Players.LocalPlayer
 
