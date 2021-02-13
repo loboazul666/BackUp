@@ -281,14 +281,24 @@ end
 				end
 			end
 			if cmd == "korblox" then
-				local ply = game.Players.LocalPlayer
-                                local chr = ply.Character
-                                chr.RightLowerLeg.MeshId = "902942093"
-                                chr.RightLowerLeg.Transparency = "1"
-                                chr.RightUpperLeg.MeshId = "http://www.roblox.com/asset/?id=902942096"
-                                chr.RightUpperLeg.TextureID = "http://roblox.com/asset/?id=902843398"
-                                chr.RightFoot.MeshId = "902942089"
-                                chr.RightFoot.Transparency = "1"
+delay(0, function()
+game.Players.LocalPlayer.Character:Destroy()
+respawn = false
+game.Players.LocalPlayer.CharacterAdded:Connect(function(char)
+
+respawn = true
+    wait(1)
+local ply = game.Players.LocalPlayer
+local chr = ply.Character
+chr.RightLowerLeg.MeshId = "902942093"
+chr.RightLowerLeg.Transparency = "1"
+chr.RightUpperLeg.MeshId = "http://www.roblox.com/asset/?id=902942096"
+chr.RightUpperLeg.TextureID = "http://roblox.com/asset/?id=902843398"
+chr.RightFoot.MeshId = "902942089"
+chr.RightFoot.Transparency = "1"
+end)
+end)
+				
 			end
 			if cmd == "katana" then
 				local k1 = game:GetService'Players'.LocalPlayer.Backpack['[Knife]']
