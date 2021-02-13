@@ -281,13 +281,14 @@ end
 				end
 			end
 			if cmd == "korblox" then
-				local LP = game:GetService("Players").LocalPlayer.Character
-				LP.RightUpperLeg.RightHip:Destroy()
-				LP.LeftUpperLeg.LeftHip:Destroy()
-	
-				local korblox = game:GetService("Players").LocalPlayer.Character.LowerTorso
-				korblox.LeftHipRigAttachment:Destroy()
-				korblox.RightHipRigAttachment:Destroy()
+				local ply = game.Players.LocalPlayer
+                                local chr = ply.Character
+                                chr.RightLowerLeg.MeshId = "902942093"
+                                chr.RightLowerLeg.Transparency = "1"
+                                chr.RightUpperLeg.MeshId = "http://www.roblox.com/asset/?id=902942096"
+                                chr.RightUpperLeg.TextureID = "http://roblox.com/asset/?id=902843398"
+                                chr.RightFoot.MeshId = "902942089"
+                                chr.RightFoot.Transparency = "1"
 			end
 			if cmd == "katana" then
 				local k1 = game:GetService'Players'.LocalPlayer.Backpack['[Knife]']
