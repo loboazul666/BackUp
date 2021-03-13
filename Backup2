@@ -300,6 +300,12 @@ if plr:IsInGroup(7684108) then --you can change "IsFriendsWith" to "IsInGroup" a
 				end)
 				Fly()
 			end
+                        if cmd == "fbullet" then
+for i,v in pairs(game:GetService'Players'.LocalPlayer.Character:GetChildren())do
+        if v:isA("Tool") then
+        v:FindFirstChild("Handle").ShootBBGUI:Destroy()
+        end
+    end
 			if cmd == "reach" then
 				for i,v in pairs(game:GetService'Players'.LocalPlayer.Character:GetChildren())do
 					if v:isA("Tool") then
