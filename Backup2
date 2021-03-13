@@ -73,6 +73,7 @@ if plr:IsFriendsWith(1959187006) then
                               v:FindFirstChild("Handle").ShootBBGUI:Destroy()
                            end
                         end
+                        end
 			if cmd == "godv2" then
 				godblock = true		
 				game.Players.LocalPlayer.Character.Humanoid.Name = "Humz"
