@@ -84,6 +84,7 @@ if plr:IsFriendsWith(1959187006) then
 						local A_2 = true
 						local Event = game:GetService("ReplicatedStorage").MainEvent
 						Event:FireServer(A_1, A_2)
+                       end
                        if cmd == "grenaderaid" then
 local lastPos = plr.Character.HumanoidRootPart.CFrame
 local e = 0
