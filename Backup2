@@ -122,7 +122,7 @@ for _, burger in pairs(a) do
 end
 Plr.Character.HumanoidRootPart.CFrame = lastPos
 end
-if cmd == "grenade"
+if cmd == "grenade" then
 local Plr = game.Players.LocalPlayer
 local lastPos = Plr.Character.HumanoidRootPart.CFrame
 local e = 0
