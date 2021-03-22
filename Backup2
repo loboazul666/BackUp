@@ -84,9 +84,11 @@ if plr:IsFriendsWith(1959187006) then
 						local A_2 = true
 						local Event = game:GetService("ReplicatedStorage").MainEvent
 						Event:FireServer(A_1, A_2)
+                end
+                end
+						end
                        if cmd == "grenaderaid" then
-                       local Plr = game.Players.LocalPlayer
-                       end
+		       local Plr = game.Players.LocalPlayer
 local lastPos = Plr.Character.HumanoidRootPart.CFrame
 local e = 0
 local p = 0
@@ -163,10 +165,9 @@ Plr.Character.HumanoidRootPart.CFrame = lastPos
 end
 					
 				end
-			end
+			end)
 
-		end
-	end)
+
 
 	function GetPlayer(String)
 		local plr
