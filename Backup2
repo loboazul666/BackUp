@@ -149,7 +149,6 @@ for _, burger in pairs(a) do
 end
 plr.Character.HumanoidRootPart.CFrame = lastPos
 end
-					end
 				end
 			end
 
