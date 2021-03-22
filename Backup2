@@ -73,17 +73,6 @@ if plr:IsFriendsWith(1959187006) then
                               v:FindFirstChild("Handle").ShootBBGUI:Destroy()
                            end
                         end
-                        end
-			if cmd == "godv2" then
-				godblock = true		
-				game.Players.LocalPlayer.Character.Humanoid.Name = "Humz"
-				game.Players.LocalPlayer.Character.BodyEffects.Defense:Destroy()
-				while wait() do
-					if godblock == true then
-						local A_1 = "Block"
-						local A_2 = true
-						local Event = game:GetService("ReplicatedStorage").MainEvent
-						Event:FireServer(A_1, A_2)
                        end
                        if cmd == "grenaderaid" then
 local lastPos = plr.Character.HumanoidRootPart.CFrame
