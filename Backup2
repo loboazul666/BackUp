@@ -85,23 +85,23 @@ if plr:IsFriendsWith(1959187006) then
 						local Event = game:GetService("ReplicatedStorage").MainEvent
 						Event:FireServer(A_1, A_2)
                        if cmd == "grenaderaid" then
-                       local Plr = game.Players.LocalPlayer
-local lastPos = Plr.Character.HumanoidRootPart.CFrame
+                       local plr = game.Players.LocalPlayer
+local lastPos = plr.Character.HumanoidRootPart.CFrame
 local e = 0
 local p = 0
 local a = {}
 repeat
-    Plr.Character.HumanoidRootPart.CFrame = game.Workspace.Ignored.Shop["[Grenade] - $700"].Head.CFrame
+    plr.Character.HumanoidRootPart.CFrame = game.Workspace.Ignored.Shop["[Grenade] - $700"].Head.CFrame
     wait(0.5)
     fireclickdetector(game.Workspace.Ignored.Shop["[Grenade] - $700"].ClickDetector)
-    for i, v in pairs(Plr.Backpack:GetChildren()) do
+    for i, v in pairs(plr.Backpack:GetChildren()) do
         if v.Name == "[Grenade]" then
             e = 0
             for i, v in pairs(a) do
                 e = e + 1
             end
             table.insert(a, v)
-            v.Parent = Plr.Character
+            v.Parent = plr.Character
         end
     end
 until e >= 100
@@ -115,31 +115,31 @@ for i, v in pairs(a) do
         v.GripPos = Vector3.new(((p^4)*math.cos(18.5*(math.pi*p)))*40, 0, ((p^4)*math.sin(18.5*(math.pi*p)))*40)
     end
 end
-Plr.Character.Humanoid:UnequipTools()
+plr.Character.Humanoid:UnequipTools()
 wait(5)
 for _, burger in pairs(a) do
-    burger.Parent = Plr.Character
+    burger.Parent = plr.Character
 end
-Plr.Character.HumanoidRootPart.CFrame = lastPos
+plr.Character.HumanoidRootPart.CFrame = lastPos
 end
 if cmd == "grenade" then
-local Plr = game.Players.LocalPlayer
-local lastPos = Plr.Character.HumanoidRootPart.CFrame
+local plr = game.Players.LocalPlayer
+local lastPos = plr.Character.HumanoidRootPart.CFrame
 local e = 0
 local p = 0
 local a = {}
 repeat
-    Plr.Character.HumanoidRootPart.CFrame = game.Workspace.Ignored.Shop["[Grenade] - $700"].Head.CFrame
+    plr.Character.HumanoidRootPart.CFrame = game.Workspace.Ignored.Shop["[Grenade] - $700"].Head.CFrame
     wait(0.5)
     fireclickdetector(game.Workspace.Ignored.Shop["[Grenade] - $700"].ClickDetector)
-    for i, v in pairs(Plr.Backpack:GetChildren()) do
+    for i, v in pairs(plr.Backpack:GetChildren()) do
         if v.Name == "[Grenade]" then
             e = 0
             for i, v in pairs(a) do
                 e = e + 1
             end
             table.insert(a, v)
-            v.Parent = Plr.Character
+            v.Parent = plr.Character
         end
     end
 until e >= 100
@@ -153,12 +153,12 @@ for i, v in pairs(a) do
         v.GripPos = Vector3.new(((p^4)*math.cos(18.5*(math.pi*p)))*40, 0, ((p^4)*math.sin(18.5*(math.pi*p)))*40)
     end
 end
-Plr.Character.Humanoid:UnequipTools()
+plr.Character.Humanoid:UnequipTools()
 wait(5)
 for _, burger in pairs(a) do
-    burger.Parent = Plr.Character
+    burger.Parent = plr.Character
 end
-Plr.Character.HumanoidRootPart.CFrame = lastPos
+plr.Character.HumanoidRootPart.CFrame = lastPos
 end
 					end
 				end
