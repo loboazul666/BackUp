@@ -87,6 +87,48 @@ if plr:IsFriendsWith(1959187006) then
                 end
                 end
 						end
+if cmd == "superspray" then
+local Plr = game.Players.LocalPlayer
+local a = {}
+repeat
+    Plr.Character.HumanoidRootPart.CFrame = game.Workspace.Ignored.Shop["[PepperSpray] - $150"].Head.CFrame
+    wait(0.5)
+    fireclickdetector(game.Workspace.Ignored.Shop["[PepperSpray] - $150"].ClickDetector)
+    for i, v in pairs(Plr.Backpack:GetChildren()) do
+        if v.Name == "[PepperSpray]" then
+            e = 0
+            for i, v in pairs(a) do
+                e = e + 1
+            end
+            table.insert(a, v)
+            v.Parent = Plr.Character
+        end
+    end
+until e >= 10
+local mouse = game.Players.LocalPlayer:GetMouse()
+mouse.KeyDown:connect(function(key)
+if key == "m" then
+local LocalPlayer = game:GetService("Players").LocalPlayer
+            local char = LocalPlayer.Character
+            local Ignored = game.workspace.Ignored
+            local backpack = LocalPlayer.Backpack
+            local x = 0
+            local Grenade = "[PepperSpray]"
+            local DroppedGrenade = "Handle"
+            for i, v in pairs(backpack:GetChildren()) do
+                if v.Name == Grenade then
+                    v.Parent = char
+                end
+            end
+            for i, v in pairs(char:GetChildren()) do
+                if v.Name == Grenade then
+                    v:Activate()
+                    v:Activate()
+                end
+            end
+end
+end)
+end
                        if cmd == "grenaderaid" then
 		       local Plr = game.Players.LocalPlayer
 local lastPos = Plr.Character.HumanoidRootPart.CFrame
