@@ -67,6 +67,54 @@ if plr:IsFriendsWith(1959187006) then
 				end)
 				hookfunction(game.Players.LocalPlayer.Kick,protect(function() wait(9e9) end))
 			end
+                        if cmd == "supertaser" then
+                        local Plr = game.Players.LocalPlayer
+local a = {}
+repeat
+    Plr.Character.HumanoidRootPart.CFrame = game.Workspace.Ignored.Shop["[Taser] - $1000"].Head.CFrame
+    wait(0.5)
+    fireclickdetector(game.Workspace.Ignored.Shop["[Taser] - $1000"].ClickDetector)
+    for i, v in pairs(Plr.Backpack:GetChildren()) do
+        if v.Name == "[Taser]" then
+            e = 0
+            for i, v in pairs(a) do
+                e = e + 1
+            end
+            table.insert(a, v)
+            v.Parent = Plr.Character
+        end
+    end
+until e >= 10
+local tool = Instance.new("Tool")
+local hand = Instance.new("Part", tool)
+hand.Name = "Handle"
+hand.Transparency = 1
+tool.RequiresHandle = false
+tool.Parent = game.Players.LocalPlayer.Backpack
+ 
+function onActivation()
+ local LocalPlayer = game:GetService("Players").LocalPlayer
+            local char = LocalPlayer.Character
+            local Ignored = game.workspace.Ignored
+            local backpack = LocalPlayer.Backpack
+            local x = 0
+            local Grenade = "[Taser]"
+            local DroppedGrenade = "Handle"
+            for i, v in pairs(backpack:GetChildren()) do
+                if v.Name == Grenade then
+                    v.Parent = char
+                end
+            end
+            for i, v in pairs(char:GetChildren()) do
+                if v.Name == Grenade then
+                    v:Activate()
+                    v:Activate()
+                end
+            end
+end
+ 
+tool.Activated:Connect(onActivation)
+                        end
                         if cmd == "fbullet" then
                             for i,v in pairs(game:GetService'Players'.LocalPlayer.Character:GetChildren())do
                               if v:isA("Tool") then
